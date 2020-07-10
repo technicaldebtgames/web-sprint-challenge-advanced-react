@@ -12,13 +12,13 @@ function App() {
   const [cart, setCart] = useState([]);
 
   // add a plant to the cart
-  const addToCart = (plant) => {
-    setCart([...cart, plant]);
+  const addToCart = (plant) => { // This is buggy
+    setCart([...cart, plant]);   // You need a unique ID either here or below in some way...
   };
 
   // remove a plant from the cart
-  const removeFromCart = (plant) => {
-    setCart(cart.filter((p) => p.id !== plant.id));
+  const removeFromCart = (plant) => { // ...because this filters on a non-unique ID
+    setCart(cart.filter((p) => p.id !== plant.id)); // Easy to show by adding 2+ of the same plant, and removing 1+ of them
   };
 
   return (
