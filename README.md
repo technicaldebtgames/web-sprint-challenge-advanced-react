@@ -30,13 +30,33 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+You can create a class component by extending React.Component and using constructor/super methods and this.state object.
+
 2. Describe the different phases of the component lifecycle.
+
+Mounting: Inserting elements into the DOM.
+Updating: Getting state from props, rendering, etc. happen here.
+Unmounting: When the component is about to be removed from the DOM.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+constructor: Applies to all class components (although I think it doesn't need you to explicitly call/declare it unless you are handling state in the component or similar).
+
+render: Actually creates the JSX for the component.
+
+componentDid..., componentWill..., etc: There are a number of other methods that fall into specific parts of the lifecycle, where certain data/state will have been moved/stored with regards to the component(s) current location in its lifecycle. Mounting, updating, unmounting, etc., are all parts of this. Depending on your needs to manipulate the component, you would choose the correct one for the specific point in the lifecycle you want to do any work in.
+
 4. Define stateful logic.
 
+Logic that handles state. State in react's case appears to mean any data STORED that affects the page/component. If you need to toggle things or populate components with data, it's likely from state.
+
 5. Describe how to test a React component with React Testing Library.
+
+Write individual tests for each part of functionality you want to test. "Does this render at all", "Does this render the title with these words", "Does this display usernames for all listed users" etc. are all potential questions each test might answer.
+
+If a test fails, continue working on the project's specific functionality until it passes the test.
+
+Do not test the state of the component(s)/functionality if at all possible. Testing is meant to test from a user's perspective, and they don't have access to state, only to displayed data.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
